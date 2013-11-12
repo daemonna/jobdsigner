@@ -1,4 +1,6 @@
+/*
 Copyright (c) 2013, peter.ducai@gmail.com
+https://github.com/daemonna/jobdsigner
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
@@ -25,3 +27,44 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+#ifndef ROLE_MANAGEMENT_H
+#define	ROLE_MANAGEMENT_H
+
+#ifdef	__cplusplus
+extern "C" {
+#endif
+    
+    char *authorization_attr;
+    char *profile_attr;
+    char *exec_attr;
+
+    struct project {
+        int64_t id;
+        char *name;
+        char *description;
+        struct job *initial_job;
+    };
+
+    struct role {
+        int64_t id;
+        char *name;
+        char *description;
+        struct job *initial_job;
+    };
+
+    struct user {
+        int64_t id;
+        char *name;
+        char *description;
+        struct job *initial_job;
+    };
+
+
+#ifdef	__cplusplus
+}
+#endif
+
+#endif	/* ROLE_MANAGEMENT_H */
+

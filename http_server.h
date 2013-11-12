@@ -1,4 +1,6 @@
+/*
 Copyright (c) 2013, peter.ducai@gmail.com
+https://github.com/daemonna/jobdsigner
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
@@ -25,3 +27,49 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+
+#ifndef HTTP_SERVER_H
+#define	HTTP_SERVER_H
+
+#ifdef	__cplusplus
+extern "C" {
+#endif
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/ioctl.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <netinet/in.h>
+#include <errno.h>
+
+
+
+
+#if defined(__linux__) 
+#include <sys/epoll.h>
+#  if defined(LINUX)
+
+
+
+#  end
+#endif
+
+
+#if defined(__unix__) || defined(__UNIX__) || (defined(__APPLE__) && defined(__MACH__))
+#include <sys/param.h>
+#if defined(BSD)
+
+
+#end
+#end
+
+
+#ifdef	__cplusplus
+}
+#endif
+
+#endif	/* HTTP_SERVER_H */
+

@@ -1,4 +1,6 @@
+/*
 Copyright (c) 2013, peter.ducai@gmail.com
+https://github.com/daemonna/jobdsigner
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
@@ -25,3 +27,71 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+#ifndef MEMORY_MANAGEMENT_H
+#define	MEMORY_MANAGEMENT_H
+
+#ifdef	__cplusplus
+extern "C" {
+#endif
+
+#include <sys/types.h>
+#include <sys/sysinfo.h>
+#include <inttypes.h>
+#include "global.h"
+
+#define MAX_MEM_LOAD 90
+
+int64_t free_memory;
+int64_t total_memory;
+int64_t used_memory;
+
+int64_t  get_totalmem(void) {
+    struct sysinfo memInfo;
+
+    sysinfo(&memInfo);
+    int64_t totalVirtualMem = memInfo.totalram;
+
+    totalVirtualMem = totalVirtualMem/1024/1024;
+    return totalVirtualMem;
+}
+
+int64_t  get_freemem(void) {
+    struct sysinfo memInfo;
+
+    sysinfo(&memInfo);
+    int64_t freeVirtualMem = memInfo.freeram;
+
+    freeVirtualMem = freeVirtualMem/1024/1024;
+    return freeVirtualMem;
+}
+
+void check_limits(){
+    int64_t allowed=get_totalmem();
+    allowed=(allowed/100)*MAX_MEM_LOAD;
+    printf("Memory should NOT exceed %" PRId64 " MB \n", allowed);
+}
+
+void update_memory_stats(void){
+    free_memory = get_freemem();
+    total_memory = get_totalmem();
+    used_memory = total_memory-free_memory;
+}
+
+void print_memory_stats(void){ 
+    total_memory = get_totalmem();
+    free_memory = get_freemem();
+    used_memory = total_memory - free_memory;
+    printf("\n[Memory stat]\n");
+    printf("total memory=%" PRId64 " \n", total_memory);
+    printf("free memory=%" PRId64 " \n", free_memory);
+    printf("used memory=%" PRId64 " \n", used_memory);
+}
+
+#ifdef	__cplusplus
+}
+#endif
+
+#endif	/* MEMORY_MANAGEMENT_H */
+

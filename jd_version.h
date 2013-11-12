@@ -1,4 +1,6 @@
+/*
 Copyright (c) 2013, peter.ducai@gmail.com
+https://github.com/daemonna/jobdsigner
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
@@ -25,3 +27,25 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+#ifndef JD_VERSION_H
+#define	JD_VERSION_H
+
+#ifdef	__cplusplus
+extern "C" {
+#endif
+    
+#include <string.h>
+
+const char*  JD_VERSION = "0.1";
+const char*  JD_BUILD = "32409";
+    
+const char* JD_NICKNAME = "Medusa";
+
+#ifdef	__cplusplus
+}
+#endif
+
+#endif	/* JD_VERSION_H */
+

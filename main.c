@@ -1,4 +1,6 @@
+/*
 Copyright (c) 2013, peter.ducai@gmail.com
+https://github.com/daemonna/jobdsigner
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
@@ -25,3 +27,28 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "memory_management.h"
+#include "job_management.h"
+#include "global.h"
+#include "jd_version.h"
+
+
+
+/*
+ * 
+ */
+int main(int argc, char** argv) {
+
+    printf("job dSigner <%s> version %s build %s\n", JD_NICKNAME, JD_VERSION, JD_BUILD);
+    
+    print_memory_stats();
+    
+    initialize_engine();
+
+    return (EXIT_SUCCESS);
+}
+

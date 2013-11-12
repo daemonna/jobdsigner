@@ -1,4 +1,6 @@
+/*
 Copyright (c) 2013, peter.ducai@gmail.com
+https://github.com/daemonna/jobdsigner
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
@@ -25,3 +27,42 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+#ifndef DATA_STORAGE_H
+#define	DATA_STORAGE_H
+
+#include "memory_management.h"
+
+
+#ifdef	__cplusplus
+extern "C" {
+#endif
+    
+#include <time.h>
+    
+    //JD STATS
+    extern time_t jd_start;
+    extern time_t jd_uptime;
+
+    //MEMORY STATS
+    extern int64_t total_memory;
+    extern int64_t free_memory;
+    extern int64_t used_memory;
+    extern int8_t max_allowed_memory; //in percents
+
+    //JOB STATS
+    extern int64_t total_jobs;
+    extern int64_t ready_jobs;
+    extern int64_t running_jobs;
+    extern int64_t waiting_jobs;
+    extern int64_t deprecated_jobs;
+    
+
+
+#ifdef	__cplusplus
+}
+#endif
+
+#endif	/* DATA_STORAGE_H */
+
