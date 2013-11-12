@@ -4,11 +4,12 @@ jobdsigner
 job scheduling and reporting
 
 
-REQUIREMENTS:
+***REQUIREMENTS:***
 
 clang 3.x
 
-TO COMPILE:
+***TO COMPILE:***
 
 cmake .
+
 make
