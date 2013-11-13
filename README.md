@@ -15,3 +15,9 @@ clang 3.x
 cmake .
 
 make
+
+***TO COMPLETELY CLEAN:***
+
+make clean
+
+git clean -dfx
