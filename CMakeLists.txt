@@ -20,8 +20,8 @@ SET (CMAKE_NM      "/usr/bin/llvm-nm")
 SET (CMAKE_OBJDUMP "/usr/bin/llvm-objdump")
 SET (CMAKE_RANLIB  "/usr/bin/llvm-ranlib")
 
-project(app_project)
+project(jobdsigner_project)
 
-add_executable(myapp main.c)
+add_executable(jobdsigner main.c)
 
-install(TARGETS myapp DESTINATION bin)
+install(TARGETS jobdsigner DESTINATION bin)
