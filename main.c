@@ -42,11 +42,23 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 int main(int argc, char** argv) {
 
-    printf("job dSigner <%s> version %s build %s\n", JD_NICKNAME, JD_VERSION, JD_BUILD);
+    printf("\njob dSigner <%s> version %s build %s\n", JD_NICKNAME, JD_VERSION, JD_BUILD);
     
     print_memory_stats();
     
-    initialize_engine();
-    return (EXIT_SUCCESS);
+ /*
+ *  MAIN LOOP
+ */
+    printf("\nentering main LOOP..\n");
+    for( ; ; )
+    {
+       /*check memory*/
+
+       /*check jobs*/
+
+       /*update HTML report*/
+    }
+
+   return 0;
 }
 

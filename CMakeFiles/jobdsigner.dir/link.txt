@@ -1,1 +1,1 @@
-/usr/bin/clang      CMakeFiles/jobdsigner.dir/main.c.o  -o jobdsigner -rdynamic 
+/usr/bin/clang  -Werror -std=c99    CMakeFiles/jobdsigner.dir/main.c.o  -o jobdsigner -rdynamic 

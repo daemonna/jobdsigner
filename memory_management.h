@@ -92,7 +92,7 @@ void print_memory_stats(void){
     free_memory = get_freemem();
     used_memory = total_memory - free_memory;
     
-    printf(ANSI_COLOR_YELLOW     "[Memory stats]"     ANSI_COLOR_RESET "\n");
+    printf(ANSI_COLOR_YELLOW     "\n[Memory stats]"     ANSI_COLOR_RESET "\n");
     printf("total memory=%" PRId64 " \n", total_memory);
     printf("free memory=%" PRId64 " \n", free_memory);
     printf("used memory=%" PRId64 " \n", used_memory);

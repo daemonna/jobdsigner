@@ -107,7 +107,7 @@ extern "C" {
         //@hourly 	Run once an hour at the beginning of the hour 	0 * * * *
     };
 
-    void initialize_engine(void) {
+    void job_add(void) {
         printf("\nEngine initialization..\n");
     }
 
