@@ -1,0 +1,1 @@
+/usr/bin/clang      CMakeFiles/jobdsigner.dir/main.c.o  -o jobdsigner -rdynamic 

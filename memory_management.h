@@ -36,6 +36,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 extern "C" {
 #endif
 
+#define ANSI_COLOR_RED     "\x1b[31m"
+#define ANSI_COLOR_GREEN   "\x1b[32m"
+#define ANSI_COLOR_YELLOW  "\x1b[33m"
+#define ANSI_COLOR_BLUE    "\x1b[34m"
+#define ANSI_COLOR_MAGENTA "\x1b[35m"
+#define ANSI_COLOR_CYAN    "\x1b[36m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
+
 #include <sys/types.h>
 #include <sys/sysinfo.h>
 #include <inttypes.h>
@@ -83,7 +91,8 @@ void print_memory_stats(void){
     total_memory = get_totalmem();
     free_memory = get_freemem();
     used_memory = total_memory - free_memory;
-    printf("\n[Memory stat]\n");
+    
+    printf(ANSI_COLOR_YELLOW     "[Memory stats]"     ANSI_COLOR_RESET "\n");
     printf("total memory=%" PRId64 " \n", total_memory);
     printf("free memory=%" PRId64 " \n", free_memory);
     printf("used memory=%" PRId64 " \n", used_memory);
